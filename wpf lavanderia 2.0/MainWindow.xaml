@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf_lavanderia_2._0" 
         mc:Ignorable="d"
-        Title="LAVANDERIA - El Nuevo Verano " Height="708" Width="1362"   >
+        Title="LAVANDERIA - El Nuevo Verano " Height="708" Width="1362" 
+        WindowState="Maximized"
+
+        >
 
 
     <Grid Margin="0,0,0,-31" RenderTransformOrigin="0.713,0.137">
@@ -93,7 +96,7 @@
 
             <!-- Definimos los ítems principales del menú, cada uno con un `Header` y subítems -->
             <MenuItem Header="Facturar" Width="215" Margin="1" >
-                <MenuItem Header="Nueva Factura"/>
+                <MenuItem Header="Nueva Factura"  Click="NuevaFactura_Click"/>
             </MenuItem>
 
             <MenuItem Header="Registro de Facturas" Width="216" Margin="1" >
@@ -129,9 +132,6 @@
             </MenuItem>
 
         </Menu>
-
-
-
-
+      
     </Grid>
 </Window>
