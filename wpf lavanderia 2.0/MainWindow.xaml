@@ -1,0 +1,137 @@
+﻿<Window x:Class="wpf_lavanderia_2._0.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wpf_lavanderia_2._0" 
+        mc:Ignorable="d"
+        Title="LAVANDERIA - El Nuevo Verano " Height="708" Width="1362"   >
+
+
+    <Grid Margin="0,0,0,-31" RenderTransformOrigin="0.713,0.137">
+        <!-- Agragar imagen de fondo -->
+        <Grid.Background>
+            <!-- Ruta relativa a la imagen dentro de la carpeta 'Images' -->
+            <ImageBrush ImageSource="C:\Users\zadkiel\source\repos\wpf lavanderia 2.0\wpf lavanderia 2.0\recursooo\foto1.jpg" Stretch="Fill" />
+        </Grid.Background>
+
+
+        <!-- Menú con fondo negro y efecto de sombra 3D -->
+        <Menu Background="Gray" HorizontalAlignment="Center" Height="40" VerticalAlignment="Top" Width="1362">
+            <!-- Aquí definimos el menú principal con un fondo gris. 
+         El menú está centrado horizontalmente y tiene un tamaño definido en altura y ancho. -->
+            <Menu.Resources>
+                <!-- Definimos recursos de estilo para todos los elementos `MenuItem` dentro de este menú. -->
+                <Style TargetType="MenuItem">
+                    <!-- Establecemos el fondo, color de texto, tamaño de fuente y padding para cada `MenuItem`. -->
+                    <Setter Property="Background" Value="Black"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="FontSize" Value="16"/>
+                    <Setter Property="Padding" Value="10,5"/>
+                    <Setter Property="Effect">
+                        <!-- Aquí aplicamos un efecto de sombra sin profundidad ni desenfoque. -->
+                        <Setter.Value>
+                            <DropShadowEffect ShadowDepth="0" BlurRadius="0" Color="Transparent"/>
+                        </Setter.Value>
+                    </Setter>
+
+                    <!-- Definimos un template personalizado para el `MenuItem` -->
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="MenuItem">
+                                <!-- Usamos un `Grid` como contenedor principal para el contenido del `MenuItem`. -->
+                                <Grid>
+                                    <Border Background="{TemplateBinding Background}"
+                                    Padding="{TemplateBinding Padding}"
+                                    SnapsToDevicePixels="True">
+                                        <!-- `ContentPresenter` se encarga de mostrar el contenido del `Header`.
+                                     Se establece para que el contenido esté centrado horizontal y verticalmente. -->
+                                        <ContentPresenter HorizontalAlignment="Center"
+                                                  VerticalAlignment="Center"
+                                                  ContentSource="Header"
+                                                  RecognizesAccessKey="True"/>
+                                    </Border>
+                                    <!-- Aquí se define un `Popup` que se muestra cuando se abre el submenú.
+                                 Este `Popup` contendrá los ítems secundarios del `MenuItem`. -->
+                                    <Popup Placement="Bottom"
+                                   IsOpen="{TemplateBinding IsSubmenuOpen}"
+                                   AllowsTransparency="True"
+                                   Focusable="False"
+                                   PopupAnimation="Fade">
+                                        <Border Background="{TemplateBinding Background}"
+                                        SnapsToDevicePixels="True"
+                                        BorderBrush="Gray"
+                                        BorderThickness="1">
+                                            <!-- `StackPanel` con la propiedad `IsItemsHost` permite que el submenú
+                                         muestre los ítems secundarios dentro del `Popup`. -->
+                                            <StackPanel IsItemsHost="True"
+                                                KeyboardNavigation.DirectionalNavigation="Cycle"/>
+                                        </Border>
+                                    </Popup>
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+
+                    <!-- Definimos triggers (disparadores) que cambian la apariencia del `MenuItem`
+                 cuando el ratón pasa sobre él o cuando el submenú está abierto. -->
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="DarkGray"/>
+                            <Setter Property="Effect">
+                                <Setter.Value>
+                                    <DropShadowEffect ShadowDepth="5" BlurRadius="10" Color="Black"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsSubmenuOpen" Value="True">
+                            <Setter Property="Background" Value="DarkGray"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Menu.Resources>
+
+            <!-- Definimos los ítems principales del menú, cada uno con un `Header` y subítems -->
+            <MenuItem Header="Facturar" Width="215" Margin="1" >
+                <MenuItem Header="Nueva Factura"/>
+            </MenuItem>
+
+            <MenuItem Header="Registro de Facturas" Width="216" Margin="1" >
+                <MenuItem Header="Buscar Registros"/>
+                <MenuItem Header="Facturas Pendientes"/>
+            </MenuItem>
+
+            <MenuItem Header="Administrador de usuarios" Width="216" Margin="1" >
+                <MenuItem Header="Crear Nuevo Usuario"/>
+                <MenuItem Header="Ver Usuarios"/>
+            </MenuItem>
+
+            <MenuItem Header="Analisis de ingresos" Width="216"  Margin="1">
+                <MenuItem Header="Imprimir PDF"/>
+                <MenuItem Header="Ver Analisis"/>
+            </MenuItem>
+
+            <MenuItem Header="Ofertas" Width="140"  Margin="1">
+                <MenuItem Header="Crear Nueva Oferta"/>
+                <MenuItem Header="Ofertas Creadas"/>
+            </MenuItem>
+
+            <MenuItem Header="Tabla de precios" Width="153" Margin="1">
+                <MenuItem Header="Precios De Articulos"/>
+            </MenuItem>
+
+            <MenuItem Header="Configuracion" Width="192"  Margin="1">
+                <MenuItem Header="Editar Precios"/>
+                <MenuItem Header="Editar Informacion Del Cliente"/>
+                <MenuItem Header="Informacion Del Negocio"/>
+                <MenuItem Header="Guia del Sotfwarre"/>
+
+            </MenuItem>
+
+        </Menu>
+
+
+
+
+    </Grid>
+</Window>
