@@ -15,20 +15,20 @@
         <!-- Agragar imagen de fondo -->
         <Grid.Background>
             <!-- Ruta relativa a la imagen dentro de la carpeta 'Images' -->
-            <ImageBrush ImageSource="C:\Users\zadkiel\source\repos\wpf lavanderia 2.0\wpf lavanderia 2.0\recursooo\foto1.jpg" Stretch="Fill" />
+            <ImageBrush ImageSource="C:\Users\zadkiel\source\repos\wpf lavanderia 2.0\wpf lavanderia 2.0\recursooo\Untitled image (7).png " Stretch="Fill" />
         </Grid.Background>
 
 
         <!-- Menú con fondo negro y efecto de sombra 3D -->
-        <Menu Background="Gray" HorizontalAlignment="Center" Height="40" VerticalAlignment="Top" Width="1362">
+        <Menu Background="LightBlue" HorizontalAlignment="Center" Height="40" VerticalAlignment="Top" Width="1362">
             <!-- Aquí definimos el menú principal con un fondo gris. 
          El menú está centrado horizontalmente y tiene un tamaño definido en altura y ancho. -->
             <Menu.Resources>
                 <!-- Definimos recursos de estilo para todos los elementos `MenuItem` dentro de este menú. -->
                 <Style TargetType="MenuItem">
                     <!-- Establecemos el fondo, color de texto, tamaño de fuente y padding para cada `MenuItem`. -->
-                    <Setter Property="Background" Value="Black"/>
-                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="Background" Value="LightBlue"/>
+                    <Setter Property="Foreground" Value="Black"/>
                     <Setter Property="FontSize" Value="16"/>
                     <Setter Property="Padding" Value="10,5"/>
                     <Setter Property="Effect">
@@ -80,7 +80,7 @@
                  cuando el ratón pasa sobre él o cuando el submenú está abierto. -->
                     <Style.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="DarkGray"/>
+                            <Setter Property="Background" Value="LightYellow"/>
                             <Setter Property="Effect">
                                 <Setter.Value>
                                     <DropShadowEffect ShadowDepth="5" BlurRadius="10" Color="Black"/>
@@ -88,7 +88,7 @@
                             </Setter>
                         </Trigger>
                         <Trigger Property="IsSubmenuOpen" Value="True">
-                            <Setter Property="Background" Value="DarkGray"/>
+                            <Setter Property="Background" Value="LightYellow"/>
                         </Trigger>
                     </Style.Triggers>
                 </Style>
@@ -133,5 +133,6 @@
 
         </Menu>
       
+  
     </Grid>
 </Window>
