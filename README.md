@@ -1,1 +1,1 @@
-# wpf lavanderia 2.0
+# Sistema de Lavanderia gestion de factura, Analisis de ingresos y sistemas de mensajeria de bot de ws
