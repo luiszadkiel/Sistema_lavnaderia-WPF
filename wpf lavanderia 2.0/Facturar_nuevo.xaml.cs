@@ -43,6 +43,11 @@ namespace wpf_lavanderia_2._0
                 return _instance;
             }
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 
     }

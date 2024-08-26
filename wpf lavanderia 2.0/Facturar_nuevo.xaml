@@ -5,31 +5,194 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf_lavanderia_2._0"
         mc:Ignorable="d"
-        Title="Facturar_nuevo" Height="566" Width="1156">
-    <Grid>
+        Title="Facturar_nuevo" Height="702" Width="1260">
+    <Grid Margin="0,0,0,-32">
         <Grid.Background>
             <!-- Ruta relativa a la imagen dentro de la carpeta 'Images' -->
             <ImageBrush ImageSource="C:\Users\zadkiel\source\repos\wpf lavanderia 2.0\wpf lavanderia 2.0\recursooo\fondosinlogo.jpg" Stretch="Fill" />
         </Grid.Background>
-        <Label HorizontalAlignment="Left" Height="70" Margin="20,10,0,0" VerticalAlignment="Top" Width="157" FontSize="40">
+        <Label HorizontalAlignment="Left" Height="70" Margin="20,10,0,0" VerticalAlignment="Top" Width="1214" FontSize="50">
             <TextBlock Width="643">
         <Run Text="No." Foreground="Blue" FontWeight="Bold"/>
         <Run Text="001" Foreground="Red"/>
             </TextBlock>
         </Label>
-        <Label Content="Nombre del cliente:" HorizontalAlignment="Left" FontWeight="Bold" Height="32" Margin="10,106,0,0" VerticalAlignment="Top" Width="134"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="132,112,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="279" Foreground="Gray"/>
-        <Label Content="Telefono:" FontWeight="Bold" HorizontalAlignment="Left" Height="30" Margin="430,112,0,0" VerticalAlignment="Top" Width="62"/>
-        <TextBox HorizontalAlignment="Left" Margin="497,112,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="157" Height="20"/>
-        <Label Content="Dia de Nacimiento" FontWeight="Bold" HorizontalAlignment="Left" Height="30" Margin="673,112,0,0" VerticalAlignment="Top" Width="119"/>
-        <Calendar HorizontalAlignment="Left" Height="169" Margin="792,106,0,0" VerticalAlignment="Top" Width="194"/>
-        <Canvas HorizontalAlignment="Left" Height="277" Margin="0,148,0,0" VerticalAlignment="Top" Width="787">
-            <ComboBox Height="32" Canvas.Left="178" Canvas.Top="10" Width="275" RenderTransformOrigin="0.502,0.017" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
-            <TextBox Height="28" Canvas.Left="458" TextWrapping="Wrap" Text="Descricipon" Canvas.Top="12" Width="319" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <TextBox Height="30" Canvas.Left="71" TextWrapping="Wrap" Text="00" Canvas.Top="10" Width="102"/>
-            <Label Content="Cantidad:" FontWeight="Bold" Height="30" Canvas.Top="12" Width="66" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Label  FontSize="20" Content="Nombre del cliente:" HorizontalAlignment="Left" FontWeight="Bold" Height="40" Margin="0,120,0,0" VerticalAlignment="Top" Width="190"/>
+
+        <TextBox  FontSize="17"  HorizontalAlignment="Left" Height="29" Margin="206,123,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="261" Foreground="Black" TextChanged="TextBox_TextChanged"/>
+
+        <Label  FontSize="20" Content="Telefono:" FontWeight="Bold" HorizontalAlignment="Left" Height="40" Margin="472,114,0,0" VerticalAlignment="Top" Width="123"/>
+
+        <TextBox FontSize="17" HorizontalAlignment="Left" Margin="574,120,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="213" Height="29" Foreground="Black"/>
+
+        <Label FontSize="20"  Content="Dia de Nacimiento" FontWeight="Bold" HorizontalAlignment="Left" Height="42" Margin="820,120,0,0" VerticalAlignment="Top" Width="214" RenderTransformOrigin="0.513,0.868"/>
+
+        <Calendar HorizontalAlignment="Left" Height="169" Margin="820,160,0,0" VerticalAlignment="Top" Width="194"/>
+
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto" RenderTransformOrigin="0.511,0.518" Margin="0,158,445,154">
+            <Canvas HorizontalAlignment="Left" Height="277" Margin="0,148,0,0" VerticalAlignment="Top" Width="787">
+                <ComboBox Height="32" Canvas.Left="160" Canvas.Top="-137" Width="293" RenderTransformOrigin="0.502,0.017" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                <TextBox  FontSize="19" Height="28" Canvas.Left="473" TextWrapping="Wrap" Text="Descricipon" Canvas.Top="-135" Width="294" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBox FontSize="19" Height="30" Canvas.Left="91" TextWrapping="Wrap" Text="00" Canvas.Top="-135" Width="57" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Label  FontSize="15"  Content="Cantidad:" FontWeight="Bold" Height="30" Canvas.Top="-135" Width="86" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Canvas Height="277" Width="787"/>
+            </Canvas>
+        </ScrollViewer>
+
+
+        <Label Foreground="Red" HorizontalAlignment="Left" Margin="20,75,0,0" VerticalAlignment="Top" FontSize="22">
+            <TextBlock Width="643">
+        <Run Text="RNC." Foreground="Red" FontWeight="Bold"/>
+        <Run Text="001-0061777-8" Foreground="Red"/>
+            </TextBlock>
+        </Label>
+        <Label FontSize="20" Content="Fecha de entrega" FontWeight="Bold" HorizontalAlignment="Left" Height="37" Margin="1056,123,0,0" VerticalAlignment="Top" Width="179" RenderTransformOrigin="0.547,0.42"/>
+        <Calendar HorizontalAlignment="Left" Height="169" Margin="1056,159,0,0" VerticalAlignment="Top" Width="178"/>
+
+
+        <Label Foreground="Red"  Content="TOTAL" HorizontalAlignment="Left"  FontWeight="Bold" Height="43" Margin="815,578,0,0" VerticalAlignment="Top" Width="102" FontSize="30"/>
+        <Label Content="ITBIS" HorizontalAlignment="Left" FontWeight="Bold" Height="41" Margin="825,513,0,0" VerticalAlignment="Top" Width="102" RenderTransformOrigin="-1.974,1.661" FontSize="20"/>
+        <Label Content="DESCUENTO" HorizontalAlignment="Left" FontWeight="Bold" Height="38" Margin="820,459,0,0" VerticalAlignment="Top" Width="136" FontSize="20"/>
+        <Canvas HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Label Content="SUB-TOTAL" FontWeight="Bold" HorizontalAlignment="Left" Height="38" VerticalAlignment="Center" Width="131" FontSize="20" Canvas.Left="821" Canvas.Top="405"/>
+            <Label Content="00.0" FontSize="30" HorizontalContentAlignment="Right" Background="LightYellow" RenderTransformOrigin="0.475,-0.988" Canvas.Left="952" Canvas.Top="394" Width="286"/>
+            <Label Content="00.0" FontSize="30" HorizontalContentAlignment="Right" Background="LightGreen" Foreground="red" FontWeight="Bold" RenderTransformOrigin="0.486,-0.172" Canvas.Left="952" Canvas.Top="575" Width="286"/>
+            <Label Content="00.0" FontSize="30" HorizontalContentAlignment="Right" Background="LightBlue" RenderTransformOrigin="0.507,0.084" Canvas.Left="952" Canvas.Top="506" Width="286"/>
+            <Label Content="00.0" FontSize="30" HorizontalContentAlignment="Right" Background="LightCoral" RenderTransformOrigin="0.459,0.02" Canvas.Left="952" Canvas.Top="448" Width="286"/>
         </Canvas>
+        
+        <Button Margin="42,578,1112,42" RenderTransformOrigin="0.5,-0.63">
+            <Button.Background>
+                <ImageBrush ImageSource="C:\Users\zadkiel\source\repos\wpf lavanderia 2.0\wpf lavanderia 2.0\recursooo\nuevo.png" Stretch="Fill"/>
+            </Button.Background>
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Content" Value=""/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Opacity" Value="0.7"/>
+                            <Setter Property="Content">
+                                <Setter.Value>
+                                    <TextBlock Text="Agregar" 
+                                       HorizontalAlignment="Center" 
+                                       VerticalAlignment="Center" 
+                                       FontWeight="Bold" 
+                                       FontSize="20" 
+                                       Foreground="Black"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Button Margin="446,573,696,42" RenderTransformOrigin="0.5,-0.63">
+            <Button.Background>
+                <ImageBrush ImageSource="C:\Users\zadkiel\source\repos\wpf lavanderia 2.0\wpf lavanderia 2.0\recursooo\descuento.png" Stretch="Fill"/>
+            </Button.Background>
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Content" Value=""/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Opacity" Value="0.7"/>
+                            <Setter Property="Content">
+                                <Setter.Value>
+                                    <TextBlock Text="Descuento" 
+                                       HorizontalAlignment="Center" 
+                                       VerticalAlignment="Center" 
+                                       FontWeight="Bold" 
+                                       FontSize="20" 
+                                       Foreground="Black"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Button Margin="184,578,970,42" RenderTransformOrigin="0.5,-0.63">
+            <Button.Background>
+                <ImageBrush ImageSource="C:\Users\zadkiel\source\repos\wpf lavanderia 2.0\wpf lavanderia 2.0\recursooo\uber-cancelado2-300x200.jpg" Stretch="Fill"/>
+            </Button.Background>
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Content" Value=""/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Opacity" Value="0.7"/>
+                            <Setter Property="Content">
+                                <Setter.Value>
+                                    <TextBlock Text="Cancelar" 
+                                       HorizontalAlignment="Center" 
+                                       VerticalAlignment="Center" 
+                                       FontWeight="Bold" 
+                                       FontSize="20" 
+                                       Foreground="Black"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Button Margin="325,578,841,42" RenderTransformOrigin="0.5,-0.63">
+            <Button.Background>
+                <ImageBrush ImageSource="C:\Users\zadkiel\source\repos\wpf lavanderia 2.0\wpf lavanderia 2.0\recursooo\png-transparent-calculator-calculator-electronics-calculator-technology-thumbnail.png" Stretch="Fill"/>
+            </Button.Background>
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Content" Value=""/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Opacity" Value="0.7"/>
+                            <Setter Property="Content">
+                                <Setter.Value>
+                                    <TextBlock Text="Calcular" 
+                                       HorizontalAlignment="Center" 
+                                       VerticalAlignment="Center" 
+                                       FontWeight="Bold" 
+                                       FontSize="20" 
+                                       Foreground="Black"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Button Margin="602,571,540,44" RenderTransformOrigin="0.5,-0.63">
+            <Button.Background>
+                <ImageBrush ImageSource="C:\Users\zadkiel\source\repos\wpf lavanderia 2.0\wpf lavanderia 2.0\recursooo\impresora logo.png" Stretch="Fill"/>
+            </Button.Background>
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Content" Value=""/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Opacity" Value="0.7"/>
+                            <Setter Property="Content">
+                                <Setter.Value>
+                                    <TextBlock Text="Imprimir" 
+                                       HorizontalAlignment="Center" 
+                                       VerticalAlignment="Center" 
+                                       FontWeight="Bold" 
+                                       FontSize="20" 
+                                       Foreground="Black"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
 
 
     </Grid>
