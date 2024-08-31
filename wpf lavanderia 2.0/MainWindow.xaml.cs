@@ -16,6 +16,7 @@ namespace wpf_lavanderia_2._0
     /// </summary>
     public partial class MainWindow : Window
     {
+        Facturar_nuevo ventanaFactura = Facturar_nuevo.Instance;
         public MainWindow()
         {
             InitializeComponent();
@@ -30,11 +31,12 @@ namespace wpf_lavanderia_2._0
             try
             {
                 // Obtén la instancia de Facturar_nuevo
-                Facturar_nuevo ventanaFactura = Facturar_nuevo.Instance;
+                
 
                 // Verifica si la ventana ya está abierta
                 if (!ventanaFactura.IsVisible)
                 {
+
                     // Si no está visible, muestra la ventana
                     ventanaFactura.Show();
                 }
@@ -49,6 +51,7 @@ namespace wpf_lavanderia_2._0
 
                     if (result == MessageBoxResult.Yes)
                     {
+                        ventanaFactura.Close();
                         // Si el usuario elige 'Sí', crea una nueva instancia
                         ventanaFactura = new Facturar_nuevo();
                         ventanaFactura.Show();
