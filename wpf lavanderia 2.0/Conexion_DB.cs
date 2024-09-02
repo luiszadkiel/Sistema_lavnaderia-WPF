@@ -12,13 +12,40 @@ namespace wpf_lavanderia_2._0
         // Objeto de conexión
         private MySqlConnection conexion;
 
+        // Instancia única de la conexión
+        private static MySqlConnection instancia;
+
         // Constructor para inicializar la cadena de conexión
-        public Conexion_DB()
-        {
-            // Actualiza con tus credenciales de conexión
-            connectionString = "Server=127.0.0.1;Port=3306;Database=lavanderia_verano;Uid=root;Pwd=admin;";
-            conexion = new MySqlConnection(connectionString);
+        public Conexion_DB() { 
+     
         }
+
+
+        // Método público estático para obtener la instancia de la conexión
+        public static MySqlConnection ObtenerConexion()
+        {
+            if (instancia == null)
+            {
+                try
+                {
+                    // Actualiza con tus credenciales de conexión
+                    string connectionString = "Server=127.0.0.1;Port=3306;Database=lavanderia_verano;Uid=root;Pwd=admin;";
+                    instancia = new MySqlConnection(connectionString);
+                    instancia.Open();
+                    MessageBox.Show("Conexión a MySQL establecida.");
+                }
+                catch (MySqlException e)
+                {
+                    MessageBox.Show("Error al conectar a la base de datos: " + e.Message);
+                }
+            }
+            return instancia; // Retorna la instancia de la conexión existente
+        }
+
+
+
+
+
 
         // Método para abrir la conexión
         public void AbrirConexion()
@@ -75,9 +102,6 @@ namespace wpf_lavanderia_2._0
         }
 
         // Método para obtener la conexión (por si es necesario en otras partes del programa)
-        public MySqlConnection ObtenerConexion()
-        {
-            return conexion;
-        }
+       
     }
 }

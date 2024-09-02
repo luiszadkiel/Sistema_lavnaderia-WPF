@@ -14,7 +14,7 @@
         <Label HorizontalAlignment="Left" Height="70" Margin="20,10,0,0" VerticalAlignment="Top" Width="1214" FontSize="50">
             <TextBlock Width="643">
         <Run Text="No." Foreground="Blue" FontWeight="Bold"/>
-        <Run Text="001" Foreground="Red"/>
+        <Run Text="{Binding NoFactura, Mode=OneWay}" Foreground="Red"/>
             </TextBlock>
         </Label>
 

@@ -28,6 +28,10 @@ namespace wpf_lavanderia_2._0
         public Facturar_nuevo()
         {
             InitializeComponent();
+
+            // Establecer el DataContext
+            Cl_Factura factura = new Cl_Factura();
+            DataContext = factura;
         }
 
         // Propiedad estática para acceder a la instancia única
