@@ -12,8 +12,7 @@ namespace wpf_lavanderia_2._0
         // Objeto de conexión
         private MySqlConnection conexion;
 
-        // Instancia única de la conexión
-        private static MySqlConnection instancia;
+      
 
         // Constructor para inicializar la cadena de conexión
         public Conexion_DB() { 
@@ -24,22 +23,12 @@ namespace wpf_lavanderia_2._0
         // Método público estático para obtener la instancia de la conexión
         public static MySqlConnection ObtenerConexion()
         {
-            if (instancia == null)
-            {
-                try
-                {
-                    // Actualiza con tus credenciales de conexión
+         
+      
                     string connectionString = "Server=127.0.0.1;Port=3306;Database=lavanderia_verano;Uid=root;Pwd=admin;";
-                    instancia = new MySqlConnection(connectionString);
-                    instancia.Open();
-                    MessageBox.Show("Conexión a MySQL establecida.");
-                }
-                catch (MySqlException e)
-                {
-                    MessageBox.Show("Error al conectar a la base de datos: " + e.Message);
-                }
-            }
-            return instancia; // Retorna la instancia de la conexión existente
+   
+            
+            return new MySqlConnection(connectionString);
         }
 
 
@@ -55,7 +44,6 @@ namespace wpf_lavanderia_2._0
                 if (conexion.State == System.Data.ConnectionState.Closed)
                 {
                     conexion.Open();
-                    MessageBox.Show("Conexión abierta exitosamente.");
                 }
             }
             catch (MySqlException ex)
@@ -72,7 +60,6 @@ namespace wpf_lavanderia_2._0
                 if (conexion.State == System.Data.ConnectionState.Open)
                 {
                     conexion.Close();
-                    MessageBox.Show("Conexión cerrada exitosamente.");
                 }
             }
             catch (MySqlException ex)
@@ -89,7 +76,6 @@ namespace wpf_lavanderia_2._0
                 AbrirConexion();
                 MySqlCommand cmd = new MySqlCommand(query, conexion);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Consulta ejecutada correctamente.");
             }
             catch (MySqlException ex)
             {

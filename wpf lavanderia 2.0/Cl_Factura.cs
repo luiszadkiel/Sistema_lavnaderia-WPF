@@ -45,8 +45,16 @@ namespace wpf_lavanderia_2._0
 
             using (MySqlConnection conexion = Conexion_DB.ObtenerConexion())
             {
+              
+
                 try
                 {
+                    // Verifica el estado de la conexión antes de abrirla
+                    if (conexion.State != System.Data.ConnectionState.Open)
+                    {
+                        conexion.Open();
+                    }
+
 
                     // Crear el comando SQL
                     using (MySqlCommand command = new MySqlCommand(query, conexion))
@@ -57,12 +65,20 @@ namespace wpf_lavanderia_2._0
                         {
                             // Convertir el resultado a int
                             NoFactura += Convert.ToInt32(result);
+
+                          
                         }
                         else
                         {
                             // Maneja el caso en que no se obtienen resultados
                             MessageBox.Show("No se encontraron facturas.");
+
                         }
+                    }
+                    // Si tienes una conexión abierta, ciérrala aquí
+                    if (conexion != null && conexion.State == System.Data.ConnectionState.Open)
+                    {
+                        conexion.Close();
                     }
                 }
                 catch (Exception ex)

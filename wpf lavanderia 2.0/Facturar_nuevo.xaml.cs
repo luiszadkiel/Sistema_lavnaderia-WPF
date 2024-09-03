@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,7 @@ namespace wpf_lavanderia_2._0
     public partial class Facturar_nuevo : Window
     {
         private static Facturar_nuevo _instance;
+        public ObservableCollection<Articulo> Articulos { get; set; }
 
         // Constructor público para permitir la creación de instancias fuera de la clase
         public Facturar_nuevo()
@@ -32,6 +34,8 @@ namespace wpf_lavanderia_2._0
             // Establecer el DataContext
             Cl_Factura factura = new Cl_Factura();
             DataContext = factura;
+            Articulos = new ObservableCollection<Articulo>();
+            dataGrid.ItemsSource = Articulos;
         }
 
         // Propiedad estática para acceder a la instancia única
@@ -48,10 +52,18 @@ namespace wpf_lavanderia_2._0
             }
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+    
+
+        private void AddNewComboBox(object sender, RoutedEventArgs e)
         {
 
+                var agregarArtWindow = new Agregar_art(Articulos);
+                agregarArtWindow.Show();
+            
+
         }
-    }
+
 
     }
+
+}
