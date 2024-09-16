@@ -1,11 +1,14 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Presentation;
+using System;
 using System.Windows;
 
 namespace wpf_lavanderia_2._0
 {
     public partial class MainWindow : Window
     {
-        private Facturar_nuevo ventanaFactura;
+        public static Facturar_nuevo ventanaFactura;
+
+         
 
         public MainWindow()
         {

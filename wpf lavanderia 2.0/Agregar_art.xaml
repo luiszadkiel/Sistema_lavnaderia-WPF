@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf_lavanderia_2._0"
         mc:Ignorable="d"
-        Title="Agregar Artículo" Height="253" Width="400">
+        Title="Agregar Artículo" Height="309" Width="430">
     <!-- Altura y ancho reducidos -->
 
-    <Grid Margin="0,0,0,0">
+    <Grid Margin="0,0,0,-6">
         <!-- Eliminado el margen negativo -->
         <!-- Imagen de fondo -->
         <Grid.Background>
@@ -59,12 +59,18 @@
         </ComboBox>
 
         <!-- Descripción -->
-        <TextBox x:Name="textBoxDescription" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" FontSize="14" Text="Descripción" Margin="20,14,20,6" RenderTransformOrigin="0.511,-0.594"/>
+        <TextBox x:Name="textBoxDescription" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" FontSize="14" Margin="20,14,20,6" RenderTransformOrigin="0.511,-0.594"/>
 
         <!-- Canvas para otros elementos -->
         <Canvas Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Margin="10">
-            <Label FontWeight="Bold" Content="AGREGAR Descripción" HorizontalAlignment="Left" Canvas.Left="11" VerticalAlignment="Top" Width="140" Canvas.Top="-61"/>
-            <Button Content="Agregar" Height="28" Canvas.Left="271" Canvas.Top="27" Width="90" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Button_Click_1"/>
+            <Label FontWeight="Bold"  FontSize="15" Content="AGREGAR Descripción" HorizontalAlignment="Left" Canvas.Left="11" VerticalAlignment="Center" Width="379" Canvas.Top="-61"/>
+            <Button Content="Agregar" Height="28" Canvas.Left="300" Canvas.Top="101" Width="90" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Button_Click_1"/>
         </Canvas>
+        <Label Content="Servicio" FontSize="15" FontWeight="Bold" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="29" Margin="20,10,0,0" Grid.Row="3" VerticalAlignment="Top" Width="80"/>
+        <ComboBox Name="tipo_Servicio" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="28" Margin="20,39,0,0" Grid.Row="3" VerticalAlignment="Top" Width="390">
+            <ComboBoxItem Content="Lavado"/>
+            <ComboBoxItem Content="LavadoYPlanchado"/>
+            <ComboBoxItem Content="Dry_clean"/>
+        </ComboBox>
     </Grid>
 </Window>

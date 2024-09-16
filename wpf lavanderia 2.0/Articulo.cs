@@ -11,6 +11,10 @@ namespace wpf_lavanderia_2._0
         public string Cantidad { get; set; }
         public string articulo { get; set; }
         public string Descripcion { get; set; }
+
+        public string Tipo_servicio { get; set; }
+
+        public String Monto { get; set; }
     }
 
 }

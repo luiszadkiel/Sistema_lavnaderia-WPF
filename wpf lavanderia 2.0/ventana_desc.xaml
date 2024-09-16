@@ -1,0 +1,18 @@
+﻿<Window x:Class="wpf_lavanderia_2._0.ventana_desc"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wpf_lavanderia_2._0"
+        mc:Ignorable="d"
+        Title="ventana_desc" Height="404" Width="489">
+    <Grid Margin="0,0,0,-6">
+        <Grid.Background>
+            <!-- Ruta relativa a la imagen dentro de la carpeta 'Images' -->
+            <ImageBrush ImageSource="C:\Users\zadkiel\source\repos\wpf lavanderia 2.0\wpf lavanderia 2.0\recursooo\fondosinlogo.jpg" Stretch="Fill" />
+        </Grid.Background>
+        <Label Content="AGREGAR UN DESCUENTO" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Height="38" Margin="39,33,0,0" VerticalAlignment="Top" Width="283" />
+        <Button Content="AGREGAR DESCUENTO" HorizontalAlignment="Left" Height="36" Margin="285,299,0,0" VerticalAlignment="Top" Width="176"  Click="Button_Click"/>
+        <TextBox x:Name="textBoxDescuento" HorizontalAlignment="Left" Height="36" Margin="35,115,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="338"/>
+    </Grid>
+</Window>

@@ -11,9 +11,10 @@
         </Grid.Background>
         <Label HorizontalAlignment="Left" Height="70" Margin="20,10,0,0" VerticalAlignment="Top" Width="1214" FontSize="50">
             <TextBlock Width="643">
-        <Run Text="No." Foreground="Blue" FontWeight="Bold"/>
-        <Run Text="{Binding NoFactura, Mode=OneWay}" Foreground="Red"/>
+    <Run Text="No." Foreground="Blue" FontWeight="Bold"/>
+    <Run Text="{Binding NoFactura, Mode=OneWay}" Foreground="Red"/>
             </TextBlock>
+
         </Label>
 
         <Label  FontSize="20" Content="Nombre del cliente:" HorizontalAlignment="Left" FontWeight="Bold" Height="40" Margin="0,120,0,0" VerticalAlignment="Top" Width="190"/>
@@ -29,17 +30,31 @@
         <Calendar HorizontalAlignment="Left" Height="169" Margin="820,160,0,0" VerticalAlignment="Top" Width="194"/>
 
 
-        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,158,445,154">
+      
             <Grid>
-                <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" CanUserAddRows="False" SelectionMode="Single">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,158,445,154">
+                <DataGrid x:Name="hi" AutoGenerateColumns="False" CanUserAddRows="False" SelectionMode="Single">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Cantidad" Binding="{Binding Cantidad}" Width="Auto"/>
-                        <DataGridTextColumn Header="Articulo" Binding="{Binding articulo}" Width="*"/>
-                        <DataGridTextColumn Header="Descripción" Binding="{Binding Descripcion}" Width="2*"/>
+                            <DataGridTextColumn Header="Cantidad" Binding="{Binding Cantidad}" Width="Auto"/>
+                            <DataGridTextColumn Header="Artículo" Binding="{Binding articulo}" Width="*"/>
+                            <DataGridTextColumn Header="Descripción" Binding="{Binding Descripcion}" Width="2*"/>
+                            <DataGridTextColumn Header="Tipo de servicio" Binding="{Binding Tipo_servicio}" Width="*"/>
+                            <DataGridTextColumn Header="Monto" Binding="{Binding Monto}" Width="Auto"/>
+
                     </DataGrid.Columns>
-                </DataGrid>
+
+                        <!-- ContextMenu para eliminar -->
+                        <DataGrid.ContextMenu>
+                            <ContextMenu>
+                            <MenuItem Header="Eliminar" Click="Eliminar_Click"/>
+                            </ContextMenu>
+                        </DataGrid.ContextMenu>
+                    </DataGrid>
+                </ScrollViewer>
             </Grid>
-        </ScrollViewer>
+        
+
+
 
         <Label Foreground="Red" HorizontalAlignment="Left" Margin="20,75,0,0" VerticalAlignment="Top" FontSize="22">
             <TextBlock Width="643">
@@ -56,10 +71,10 @@
         <Label Content="DESCUENTO" HorizontalAlignment="Left" FontWeight="Bold" Height="38" Margin="820,459,0,0" VerticalAlignment="Top" Width="136" FontSize="20"/>
         <Canvas HorizontalAlignment="Left" VerticalAlignment="Top">
             <Label Content="SUB-TOTAL" FontWeight="Bold" HorizontalAlignment="Left" Height="38" VerticalAlignment="Center" Width="131" FontSize="20" Canvas.Left="821" Canvas.Top="405"/>
-            <Label Content="00.0" FontSize="30" HorizontalContentAlignment="Right" Background="LightYellow" RenderTransformOrigin="0.475,-0.988" Canvas.Left="952" Canvas.Top="394" Width="286"/>
+            <Label x:Name="subtotallabel"  Content="{Binding LabelText3}" FontSize="30" HorizontalContentAlignment="Right" Foreground="Black" Background="LightYellow" RenderTransformOrigin="0.475,-0.988" Canvas.Left="952" Canvas.Top="394" Width="286" HorizontalAlignment="Center" Height="49" VerticalAlignment="Top"/>
             <Label Content="00.0" FontSize="30" HorizontalContentAlignment="Right" Background="LightGreen" Foreground="red" FontWeight="Bold" RenderTransformOrigin="0.486,-0.172" Canvas.Left="952" Canvas.Top="575" Width="286"/>
             <Label Content="00.0" FontSize="30" HorizontalContentAlignment="Right" Background="LightBlue" RenderTransformOrigin="0.507,0.084" Canvas.Left="952" Canvas.Top="506" Width="286"/>
-            <Label Content="00.0" FontSize="30" HorizontalContentAlignment="Right" Background="LightCoral" RenderTransformOrigin="0.459,0.02" Canvas.Left="952" Canvas.Top="448" Width="286"/>
+            <Label x:Name="descuentolabel"  Content="{Binding descuentolabel}" FontSize="30" HorizontalContentAlignment="Right" Background="LightCoral" RenderTransformOrigin="0.459,0.02" Canvas.Left="952" Canvas.Top="448" Width="286" HorizontalAlignment="Center" Height="53" VerticalAlignment="Top"/>
         </Canvas>
 
         <Button Margin="42,578,1112,42" RenderTransformOrigin="0.5,-0.63" Click="AddNewComboBox">
@@ -88,7 +103,7 @@
             </Button.Style>
         </Button>
 
-        <Button Margin="446,573,696,42" RenderTransformOrigin="0.5,-0.63">
+        <Button Margin="446,573,696,42" RenderTransformOrigin="0.5,-0.63" Click="DESCUENTOButton_Click">
             <Button.Background>
                 <ImageBrush ImageSource="C:\Users\zadkiel\source\repos\wpf lavanderia 2.0\wpf lavanderia 2.0\recursooo\descuento.png" Stretch="Fill"/>
             </Button.Background>
@@ -113,6 +128,7 @@
                 </Style>
             </Button.Style>
         </Button>
+
 
         <Button Margin="184,578,970,42" RenderTransformOrigin="0.5,-0.63">
             <Button.Background>
@@ -140,7 +156,7 @@
             </Button.Style>
         </Button>
 
-        <Button Margin="325,578,841,42" RenderTransformOrigin="0.5,-0.63">
+        <Button Margin="325,578,841,42" RenderTransformOrigin="0.5,-0.63" Click="mostar_precioClick">
             <Button.Background>
                 <ImageBrush ImageSource="C:\Users\zadkiel\source\repos\wpf lavanderia 2.0\wpf lavanderia 2.0\recursooo\png-transparent-calculator-calculator-electronics-calculator-technology-thumbnail.png" Stretch="Fill"/>
             </Button.Background>
